@@ -83,6 +83,16 @@
             // Show the selected content
             document.getElementById(tabName).classList.add('active');
         }
+
+        // Handle hash on page load
+        window.onload = function() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                showContent(hash);
+            } else {
+                showContent('home');
+            }
+        };
     </script>
 
 </body>
